@@ -7,9 +7,12 @@ import {
   Alert,
   TouchableOpacity,
 } from 'react-native';
+
 import Icon from 'react-native-vector-icons/Feather';
 
 import foto from './src/assets/foto.jpeg';
+
+import Card from './src/components/Card';
 
 const App = () => {
   function handleRedeSocial(rede_social) {
@@ -25,6 +28,7 @@ const App = () => {
         break;
     }
   }
+
   return (
     <>
       <View style={style.page}>
@@ -44,32 +48,16 @@ const App = () => {
             </TouchableOpacity>
           </View>
         </View>
-
-        <View style={style.card_container}>
-          <View style={style.card}>
-            <View style={style.card_header}>
-              <Text>Experiência Profissional</Text>
-            </View>
-            <View style={style.card_content}>
-              <Text style={style.card_content_text}>DMS desenvolvimento</Text>
-              <Text style={style.card_content_text}>DMS programador</Text>
-              <Text style={style.card_content_text}>DMS designer</Text>
-            </View>
-          </View>
-        </View>
-
-        <View style={style.card_container}>
-          <View style={style.card}>
-            <View style={style.card_header}>
-              <Text>Formação Academica</Text>
-            </View>
-            <View style={style.card_content}>
-              <Text style={style.card_content_text}>UNESA</Text>
-              <Text style={style.card_content_text}>DIO</Text>
-              <Text style={style.card_content_text}>RocketSeat</Text>
-            </View>
-          </View>
-        </View>
+        <Card title="Formação Academica">
+          <Text style={style.card_content_text}>UNESA</Text>
+          <Text style={style.card_content_text}>DIO</Text>
+          <Text style={style.card_content_text}>RocketSeat</Text>
+        </Card>
+        <Card title="Experiências Profissional">
+          <Text style={style.card_content_text}>Casa</Text>
+          <Text style={style.card_content_text}>Trabalho</Text>
+          <Text style={style.card_content_text}>outros</Text>
+        </Card>
       </View>
     </>
   );
@@ -103,24 +91,6 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     width: '60%',
     justifyContent: 'space-between',
-    marginTop: 20,
-  },
-  card_container: {
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 20,
-    padding: 10,
-  },
-  card: {
-    width: '60%',
-    borderRadius: 5,
-    borderWidth: 2,
-    borderColor: '#939393',
-    padding: 10,
-    backgroundColor: '#fff',
-  },
-  card_content: {
     marginTop: 20,
   },
   card_content_text: {
